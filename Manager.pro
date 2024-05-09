@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,13 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    manager.cpp
+    Manager.cpp
 
 HEADERS += \
-    manager.h
+    Manager.h
 
 FORMS += \
-    manager.ui
+    Manager.ui
 
 TRANSLATIONS += \
     Manager_zh_CN.ts

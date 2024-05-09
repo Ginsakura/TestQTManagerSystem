@@ -1,4 +1,4 @@
-#include "Manager.h"
+﻿#include "Manager.h"
 
 Manager::Manager(QWidget *parent)
     : QMainWindow(parent)
