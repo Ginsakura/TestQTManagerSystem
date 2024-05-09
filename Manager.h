@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QMessageBox>
+#include <login.h>
 class Manager : public QMainWindow
 {
     Q_OBJECT
@@ -14,6 +15,19 @@ class Manager : public QMainWindow
 public:
     Manager(QWidget *parent = nullptr);
     ~Manager();
+
+private slots:
+    void on_pushButton_5_clicked();
+
+    void on_appoin_button_clicked();
+
+    void on_register_button_clicked();
+
+    void on_check_out_clicked();
+
+    void on_event_clicked();
+
+    void on_room_infor_clicked();
 
 private:
     Ui::ManagerClass ui;

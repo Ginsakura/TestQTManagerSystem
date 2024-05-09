@@ -16,14 +16,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    login.cpp \
     main.cpp \
     Manager.cpp
 
 HEADERS += \
-    Manager.h
+    Manager.h \
+    login.h
 
 FORMS += \
-    Manager.ui
+    Manager.ui \
+    login.ui
 
 TRANSLATIONS += \
     Manager_zh_CN.ts
