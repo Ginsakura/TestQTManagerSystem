@@ -6,7 +6,7 @@ Manager::Manager(QWidget *parent)
     ui.setupUi(this);
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setHostName("127.0.0.1");
-    db.setDatabaseName("Manager");
+    db.setDatabaseName("Manager.db");
     db.setUserName("admin");
     db.setPassword("123456");
     query = QSqlQuery(db);
