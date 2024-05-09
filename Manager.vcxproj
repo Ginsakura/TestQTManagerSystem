@@ -97,10 +97,15 @@
     <QtRcc Include="Manager.qrc" />
     <QtUic Include="Manager.ui" />
     <QtMoc Include="Manager.h" />
+    <ClCompile Include="functions.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="main.cpp" />
     <None Include="Manager.ico" />
     <ResourceCompile Include="Manager.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="functions.h" />
+    <ClInclude Include="sql.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
