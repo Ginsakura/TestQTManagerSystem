@@ -4,7 +4,7 @@ Manager::Manager(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-    ui.widget->setWindowTitle("酒店前台管理系统");
+    this->setWindowTitle("酒店前台管理系统");
     //设置stackedwidget初始页面
     ui.stackedWidget->setCurrentWidget(ui.page_2);
     db.close();

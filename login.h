@@ -2,7 +2,7 @@
 #define LOGIN_H
 
 #include <QWidget>
-#include <Manager.h>
+#include "Manager.h"
 namespace Ui {
 class LOGIN;
 }
