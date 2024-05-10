@@ -4,11 +4,11 @@
 #include <Manager.h>
 #include <QSqlQuery>
 #include <QSqlDatabase>
-
+#include <QMessageBox>
 namespace Ui {
 class LOGIN;
 }
-class Signin;
+
 class LOGIN : public QWidget
 {
     Q_OBJECT
@@ -16,12 +16,13 @@ class LOGIN : public QWidget
 public:
     explicit LOGIN(QWidget *parent = nullptr);
     ~LOGIN();
-
+signals:
+    void login_success();
 private slots:
     void on_login_clicked();
 
 private:
     Ui::LOGIN *ui;
     SQLOperat sql;
-    Signin * sign_page = NULL;
+    Manager *page2 = NULL;
 };

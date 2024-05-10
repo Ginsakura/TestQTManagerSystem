@@ -61,7 +61,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="username_edit"/>
        </item>
       </layout>
      </item>
@@ -75,7 +75,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="password_edit"/>
        </item>
       </layout>
      </item>
@@ -96,13 +96,6 @@
      <widget class="QPushButton" name="login">
       <property name="text">
        <string>登录</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="sign1">
-      <property name="text">
-       <string>注册</string>
       </property>
      </widget>
     </item>
