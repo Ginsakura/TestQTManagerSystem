@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include <qstring.h>
 #include <qsqldatabase.h>
 #include <qsqlquery.h>
@@ -36,7 +36,7 @@ SQLOperat::SQLOperat() {
 	DB.setUserName("admin");
 	DB.setPassword("123456");
 	if (!DB.open()) {
-		qout << QFgColor(0xff, 0, 0) << "´ò¿ªÊ§°Ü" << QResetColor();
+		qout << QFgColor(0xff, 0, 0) << "æ‰“å¼€å¤±è´¥" << QResetColor();
 	}
 	cursor = QSqlQuery(DB);
 	//create table
@@ -73,10 +73,10 @@ SQLOperat::SQLOperat() {
 		"Permission bool default false);");
 	bool create = cursor.execBatch();
 	if (create) {
-		qout << QFgColor(0, 0xff, 0) << "´´½¨³É¹¦" << QResetColor();
+		qout << QFgColor(0, 0xff, 0) << "åˆ›å»ºæˆåŠŸ" << QResetColor();
 	}
 	else {
-		qout << QFgColor(0xff, 0, 0) << "´´½¨Ê§°Ü" << QResetColor() << cursor.lastError().text();
+		qout << QFgColor(0xff, 0, 0) << "åˆ›å»ºå¤±è´¥" << QResetColor() << cursor.lastError().text();
 	}
 }
 QSqlQuery SQLOperat::getAll(const QString table) {
