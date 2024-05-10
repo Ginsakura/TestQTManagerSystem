@@ -16,6 +16,7 @@ SQLOperat::SQLOperat() {
 	}
 	cursor = QSqlQuery(DB);
 	//create table
+<<<<<<< HEAD
 	cursor.prepare("create table if not exists RoomStatu ("
 		"RoomNumber int primary key,"
 		"Reservation bool,"
@@ -48,6 +49,42 @@ SQLOperat::SQLOperat() {
 		"Password not null,"
 		"Permission bool default false);");
     bool create = cursor.exec();
+=======
+	cursor.prepare(
+		"create table if not exists RoomStatu ("
+			"RoomNumber int primary key,"
+			"Reservation bool,"
+			"ReservationDate datetime,"
+			"CheckIn bool,"
+			"CheckInDate datetime,"
+			"CheckInTime datetime,"
+			"PeopleNumber int not null,"
+			"Remark text )"
+		"create table if not exists Event ("
+			"DateTime datetime primary key,"
+			"RoomNumber int not null,"
+			"Event text not null,"
+			"state int );"
+		"create table if not exists Room ("
+			"RoomNumber int primary key,"
+			"Price int not null,"
+			"VIP int)"
+		"create table if not exists Roomer ("
+			"DateTime datetime primary key,"
+			"Name text not null,"
+			"PersonID text(18) not null,"
+			"Phone text(11) not null,"
+			"Gender bool not null,"
+			"RoomNumber int not null,"
+			"UseVIP bool,"
+			"State int);"
+		"create table if not exists User ("
+			"UserName text primary key,"
+			"Password not null,"
+			"Permission bool default false);"
+	);
+	bool create = cursor.exec();
+>>>>>>> 5d39af8eafcfa731f6eb69cb9b7759d48ac3411f
 	if (create) {
 		qout << QFgColor(0, 0xff, 0) << "创建成功" << QResetColor();
 	}
