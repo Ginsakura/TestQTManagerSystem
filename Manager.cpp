@@ -10,20 +10,8 @@ Manager::Manager(QWidget *parent)
     ui.stackedWidget->setCurrentWidget(ui.page_2);
 
     //今日房源信息输出
-<<<<<<< HEAD
 //    QSqlQuery query = sql.SelectAll("RoomStatu");
 //    while (query.next()) {
-=======
-    QStringList RoomNumberList;
-    QSqlQuery query = sql.SelectAll("RoomStatu");
-    while (query.next()) {
-        RoomNumberList <<query.value(0).toString();
-        for(int row=0;row<12;row++){
-            int col=0;
-        ui.tableWidget->setItem(row,col,new QTableWidgetItem(RoomNumberList[row]));
-        }
-    }
->>>>>>> 5d39af8eafcfa731f6eb69cb9b7759d48ac3411f
 //        RoomNumberList <<query.value(0).toString();
 //        for(int row=0;row<12;row++){
 //            int col=0;
