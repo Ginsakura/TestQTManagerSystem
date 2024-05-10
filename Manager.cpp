@@ -4,6 +4,7 @@ Manager::Manager(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
+    ui.widget->setWindowTitle("酒店前台管理系统");
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setHostName("127.0.0.1");
     db.setDatabaseName("Manager.db");

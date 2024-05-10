@@ -95,9 +95,11 @@
     <None Include=".gitignore" />
     <None Include="readme.md" />
     <QtRcc Include="Manager.qrc" />
+    <QtUic Include="login.ui" />
     <QtUic Include="Manager.ui" />
     <QtMoc Include="Manager.h" />
     <ClCompile Include="functions.cpp" />
+    <ClCompile Include="login.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="main.cpp" />
     <None Include="Manager.ico" />
@@ -105,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
+    <QtMoc Include="login.h" />
     <ClInclude Include="sql.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

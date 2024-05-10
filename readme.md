@@ -3,6 +3,12 @@
 ![Login](readme/login.png)
 
 ## DataBase
+### User
+| Column          | Type     | lenth | Remark      |
+|-----------------|----------|-------|-------------|
+| UserName        | text     |       | primary key |
+| Password        | text     |       |             |
+| Permission      | bool     |       |             |
 ### RoomStatu
 | Column          | Type     | lenth | Remark      |
 |-----------------|----------|-------|-------------|
@@ -40,6 +46,9 @@
 | State           | int      |       | 0=exit,1=reser,2=checkin...|
 
 ## version
+### 0.0.3 sql
+创建SQLite，完善数据库设计
+
 ### 0.0.2 init
 合并VS项目与QTC项目
 设计数据库
