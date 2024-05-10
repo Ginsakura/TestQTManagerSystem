@@ -11,7 +11,7 @@ Manager::Manager(QWidget *parent)
 
     //今日房源信息输出
     QStringList RoomNumberList;
-    QSqlQuery query = sql.getAll("RoomStatu");
+    QSqlQuery query = sql.SelectAll("RoomStatu");
     while (query.next()) {
         RoomNumberList <<query.value(0).toString();
         for(int row=0;row<12;row++){

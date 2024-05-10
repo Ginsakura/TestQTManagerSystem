@@ -1,5 +1,4 @@
-#ifndef LOGIN_H
-#define LOGIN_H
+#pragma once
 
 #include <QWidget>
 #include "Manager.h"
@@ -21,5 +20,3 @@ private slots:
 private:
     Ui::LOGIN *ui;
 };
-
-#endif // LOGIN_H
