@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QMessageBox>
+#include <qtabwidget.h>
 #include "sql.h"
 
 class Manager : public QMainWindow

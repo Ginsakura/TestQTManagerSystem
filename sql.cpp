@@ -12,55 +12,82 @@ SQLOperat::SQLOperat() {
 	DB.setUserName("admin");
 	DB.setPassword("123456");
 	if (!DB.open()) {
-		qout << QFgColor(0xff, 0, 0) << "打开失败" << QResetColor();
+		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("打开失败") << QResetColor();
 	}
 	cursor = QSqlQuery(DB);
+	bool create = false;
 	//create table
-	cursor.prepare(
-		"create table if not exists RoomStatu ("
-			"RoomNumber int primary key,"
-			"Reservation bool,"
-			"ReservationDate datetime,"
-			"CheckIn bool,"
-			"CheckInDate datetime,"
-			"CheckInTime datetime,"
-			"PeopleNumber int not null,"
-			"Remark text )"
-		"create table if not exists Event ("
-			"DateTime datetime primary key,"
-			"RoomNumber int not null,"
-			"Event text not null,"
-			"state int );"
-		"create table if not exists Room ("
-			"RoomNumber int primary key,"
-			"Price int not null,"
-			"VIP int)"
-		"create table if not exists Roomer ("
-			"DateTime datetime primary key,"
-			"Name text not null,"
-			"PersonID text(18) not null,"
-			"Phone text(11) not null,"
-			"Gender bool not null,"
-			"RoomNumber int not null,"
-			"UseVIP bool,"
-			"State int);"
-		"create table if not exists User ("
-			"UserName text primary key,"
-			"Password not null,"
-			"Permission bool default false);"
-	);
-	bool create = cursor.exec();
+	cursor.prepare("create table if not exists RoomStatu ("
+		"RoomNumber int primary key,"
+		"Reservation bool,"
+		"ReservationDate datetime,"
+		"CheckIn bool,"
+		"CheckInDate datetime,"
+		"CheckInTime datetime,"
+		"PeopleNumber int not null,"
+		"Remark text );");
+	create = cursor.exec();
 	if (create) {
-		qout << QFgColor(0, 0xff, 0) << "创建成功" << QResetColor();
+		qout << QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("RoomStatu表创建成功或已存在") << QResetColor();
 	}
 	else {
-        qout << QFgColor(0xff, 0, 0) << "创建失败：" << QResetColor() << cursor.lastError();
+		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("RoomStatu表创建失败: ") << QResetColor() << cursor.lastError();
+	}
+	cursor.prepare("create table if not exists Event ("
+		"RecordTime datetime primary key,"
+		"RoomNumber int not null,"
+		"Event text not null,"
+		"state int );");
+	create = cursor.exec();
+	if (create) {
+		qout << QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("Event表创建成功或已存在") << QResetColor();
+	}
+	else {
+		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("Event表创建失败: ") << QResetColor() << cursor.lastError();
+	}
+	cursor.prepare("create table if not exists Room ("
+		"RoomNumber int primary key,"
+		"Price int not null,"
+		"VIP int);");
+	create = cursor.exec();
+	if (create) {
+		qout << QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("Room表创建成功或已存在") << QResetColor();
+	}
+	else {
+		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("Room表创建失败: ") << QResetColor() << cursor.lastError();
+	}
+	cursor.prepare("create table if not exists Roomer ("
+		"RecordTime datetime primary key,"
+		"Name text not null,"
+		"PersonID text(18) not null,"
+		"Phone text(11) not null,"
+		"Gender bool not null,"
+		"RoomNumber int not null,"
+		"UseVIP bool,"
+		"State int);");
+	create = cursor.exec();
+	if (create) {
+		qout << QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("Roomer表创建成功或已存在") << QResetColor();
+	}
+	else {
+		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("Roomer表创建失败: ") << QResetColor() << cursor.lastError();
+	}
+	cursor.prepare("create table if not exists User ("
+		"UserName text primary key,"
+		"Password not null,"
+		"Permission bool default false);");
+	create = cursor.exec();
+	if (create) {
+		qout << QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("User表创建成功或已存在") << QResetColor();
+	}
+	else {
+		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("User表创建失败: ") << QResetColor() << cursor.lastError();
 	}
 }
 QSqlQuery SQLOperat::SelectAll(const QString table) {
 	QSqlQuery cur = QSqlQuery(DB);
 	cur.prepare(QString("SELECT * from %1").arg(table));
-	bool state = cursor.exec();
+	bool state = cur.exec();
 	if (state) {
 		return cur;
 	}

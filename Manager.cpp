@@ -5,7 +5,7 @@ Manager::Manager(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-    this->setWindowTitle("酒店前台管理系统");
+    this->setWindowTitle(QString::fromLocal8Bit("酒店前台管理系统"));
     //设置stackedwidget初始页面
     ui.stackedWidget->setCurrentWidget(ui.page_2);
 
@@ -36,7 +36,6 @@ Manager::Manager(QWidget *parent)
         QString CheckInTime=q.value(5).toString();
         QString PeopleNumber=q.value(6).toString();
         QString Remark =q.value(7).toString();
-//    qDebug()<<
         ui.tableWidget->insertRow(i);
         ui.tableWidget->setItem(i,0,new QTableWidgetItem(RoomNumber));
         ui.tableWidget->setItem(i,1,new QTableWidgetItem(Reservation));
