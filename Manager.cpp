@@ -1,4 +1,5 @@
 ﻿#include "Manager.h"
+#include "sql.h"
 
 Manager::Manager(QWidget *parent)
     : QMainWindow(parent)

@@ -92,6 +92,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="sql.cpp" />
     <None Include=".gitignore" />
     <None Include="readme.md" />
     <QtRcc Include="Manager.qrc" />

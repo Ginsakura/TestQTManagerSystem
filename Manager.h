@@ -8,6 +8,7 @@
 #include <QSqlError>
 #include <QMessageBox>
 #include "sql.h"
+
 class Manager : public QMainWindow
 {
     Q_OBJECT
