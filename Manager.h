@@ -36,7 +36,6 @@ private slots:
 private:
     Ui::ManagerClass ui;
     SQLOperat sql;
-    QSqlDatabase db;
     QSqlQuery query;
 
 };

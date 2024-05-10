@@ -19,12 +19,9 @@ public:
 
 private slots:
     void on_login_clicked();
-    void comeBackToPrev();
-    void on_sign1_clicked();
 
 private:
     Ui::LOGIN *ui;
-    QSqlQuery query;
-    QSqlDatabase db;
+    SQLOperat sql;
     Signin * sign_page = NULL;
 };
