@@ -4,7 +4,7 @@ Manager::Manager(QWidget *parent)
     : QMainWindow(parent)
 {
     ui.setupUi(this);
-    ui.widget->setWindowTitle("酒店前台管理系统");
+    this->setWindowTitle("酒店前台管理系统");
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setHostName("127.0.0.1");
     db.setDatabaseName("Manager.db");
@@ -26,7 +26,7 @@ Manager::Manager(QWidget *parent)
         query.exec("create table if not exists Event(DateTime datetime primary key,RoomNumber int not null,Event text not null,state int ) ");
         query.exec("create table if not exists Room(RoomNumber int primary key,Price int not null,VIP int)");
         query.exec("create table if not exists Roomer(DateTime datetime primary key,Name text not null,PersonID text(18) not null,Phone text(11) not null,Gender bool not null,RoomNumber int not null,UseVIP bool ,State int )");
-//        query.exec("create table if not exists Account(account ) ");
+
         //设置stackedwidget初始页面
         ui.stackedWidget->setCurrentWidget(ui.page_2);
     db.close();
