@@ -1,5 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
+#include "sql.h"
 
 LOGIN::LOGIN(QWidget *parent) :
     QWidget(parent),
@@ -45,7 +46,7 @@ LOGIN::~LOGIN()
 
 void LOGIN::on_login_clicked()
 {
-    Manager *m=new Manager;
+    Manager* m = new Manager;
     m->show();
     close();
 }

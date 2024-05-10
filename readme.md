@@ -23,7 +23,7 @@
 ### Event
 | Column          | Type     | lenth | Remark      |
 |-----------------|----------|-------|-------------|
-| DateTime        | datetime |       | primary key |
+| RecordTime      | datetime |       | primary key |
 | RoomNumber      | int      |       | NotNull     |
 | Event           | text     |       | NotNull     |
 | State           | int      |       | 0=compelete |
@@ -36,7 +36,7 @@
 ### Roomer
 | Column          | Type     | lenth | Remark      |
 |-----------------|----------|-------|-------------|
-| DateTime        | datetime |       | primary key |
+| RecordTime      | datetime |       | primary key |
 | Name            | text     |       | NotNull     |
 | PersonID        | text     | 18    | NotNull     |
 | Phone           | text     | 11    | NotNull     |

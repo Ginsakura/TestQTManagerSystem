@@ -1,5 +1,4 @@
-#ifndef LOGIN_H
-#define LOGIN_H
+#pragma once
 
 #include <QWidget>
 #include <Manager.h>
@@ -29,5 +28,3 @@ private:
     QSqlDatabase db;
     Signin * sign_page = NULL;
 };
-
-#endif // LOGIN_H
