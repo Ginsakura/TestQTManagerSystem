@@ -56,12 +56,14 @@ SQLOperat::SQLOperat() {
 	}
 }
 QSqlQuery SQLOperat::SelectAll(const QString table) {
-	cursor.prepare(QString("SELECT * from %1").arg(table));
-	if (!cursor.exec()) {
-		qout << QFgColor(0xff, 0, 0) << "select error: " << QResetColor() << cursor.lastError();
+	QSqlQuery cur = QSqlQuery(DB);
+	cur.prepare(QString("SELECT * from %1").arg(table));
+	bool state = cursor.exec();
+	if (state) {
+		return cur;
 	}
 	else {
-		return cursor;
+		qout << QFgColor(0xff, 0, 0) << "select error: " << QResetColor() << cur.lastError();
 	}
 }
 bool SQLOperat::Insert(const QString table, const QString keys, const QString value) {
@@ -88,24 +90,26 @@ bool SQLOperat::Update(const QString table, const QString keys, const QString va
 	}
 	return state;
 }
-QSqlQuery SQLOperat::Select(const QString table, const QString getter = "*", const QString condition) {
-	cursor.prepare(QString("select %1 from %2 where %3").arg(getter).arg(table).arg(condition));
-	bool state = cursor.exec();
-	if (!state) {
-		qout << QFgColor(0xff, 0, 0) << "select error: " << QResetColor() << cursor.lastError();
+QSqlQuery SQLOperat::Select(const QString table, const QString getter, const QString condition) {
+	QSqlQuery cur = QSqlQuery(DB);
+	cur.prepare(QString("select %1 from %2 where %3").arg(getter).arg(table).arg(condition));
+	bool state = cur.exec();
+	if (state) {
+		return cur;
 	}
 	else {
-		return cursor;
+		qout << QFgColor(0xff, 0, 0) << "select error: " << QResetColor() << cur.lastError();
 	}
 }
 QSqlQuery SQLOperat::Select(const QString table, const QString getter = "*") {
+	QSqlQuery cur = QSqlQuery(DB);
 	cursor.prepare(QString("select %1 from %2").arg(getter).arg(table));
 	bool state = cursor.exec();
-	if (!state) {
-		qout << QFgColor(0xff, 0, 0) << "select error: " << QResetColor() << cursor.lastError();
+	if (state) {
+		return cur;
 	}
 	else {
-		return cursor;
+		qout << QFgColor(0xff, 0, 0) << "select error: " << QResetColor() << cur.lastError();
 	}
 }
 
