@@ -8,9 +8,6 @@ LOGIN::LOGIN(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //query.exec("insert into user(Username,Password,Vip) values(123456,'password',1)");
-    //query.exec("insert into user(Username,Password,Vip) values(987654,'password',0)");
-    //query.exec("insert into user(Username,Password,Vip) values(552252,'password')");
 }
 
 LOGIN::~LOGIN()

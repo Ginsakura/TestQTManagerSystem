@@ -16,8 +16,8 @@
 | Reservation     | bool     |       |             |
 | ReservationDate | datetime |       |             |
 | CheckIn         | bool     |       |             |
-| CheckInDate     | datetime |       |             |
 | CheckInTime     | datetime |       |             |
+| CheckEndTime    | datetime |       |             |
 | PeopleNumber    | int      |       | NotNull     |
 | Remark          | text     |       |             |
 ### Event
