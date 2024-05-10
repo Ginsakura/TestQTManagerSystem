@@ -30,9 +30,12 @@ private slots:
 
     void on_room_infor_clicked();
 
+    void on_dengji_clicked();
+
 private:
     Ui::ManagerClass ui;
     SQLOperat sql;
-
+    QSqlDatabase db;
+    QSqlQuery query;
 
 };
