@@ -7,7 +7,22 @@ Manager::Manager(QWidget *parent)
     this->setWindowTitle("酒店前台管理系统");
     //设置stackedwidget初始页面
     ui.stackedWidget->setCurrentWidget(ui.page_2);
-    db.close();
+
+    //今日房源信息输出
+    QStringList RoomNumberList;
+    QSqlQuery query = sql.getAll("RoomStatu");
+    while (query.next()) {
+        RoomNumberList <<query.value(0).toString();
+        for(int row=0;row<12;row++){
+            int col=0;
+        ui.tableWidget->setItem(row,col,new QTableWidgetItem(RoomNumberList[row]));
+        }
+    }
+//        RoomNumberList <<query.value(0).toString();
+//        for(int row=0;row<12;row++){
+//            int col=0;
+//        ui.tableWidget->setItem(row,col,new QTableWidgetItem(RoomNumberList[row]));
+//        }
 }
 
 Manager::~Manager()

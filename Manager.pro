@@ -22,7 +22,8 @@ SOURCES += \
 
 HEADERS += \
     Manager.h \
-    login.h
+    login.h \
+    sql.h
 
 FORMS += \
     Manager.ui \

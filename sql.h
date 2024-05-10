@@ -106,8 +106,8 @@ bool SQLOperat::Update(const QString table, const QString keys, const QString va
 }
 QSqlQuery SQLOperat::Select(const QString table, const QString getter, const QString condition) {
 	cursor.prepare(QString("select %1 from %2 where %3").arg(getter).arg(table).arg(condition));
-	bool state = cursor.exec();
-	if (!cursor.exec()) {
+    bool state = cursor.exec();
+    if (!state) {
 		qout << QFgColor(0xff, 0, 0) << "select error: " << QResetColor() << cursor.lastError();
 	}
 	else {

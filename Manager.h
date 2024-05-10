@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QSqlError>
 #include <QMessageBox>
+#include "sql.h"
 class Manager : public QMainWindow
 {
     Q_OBJECT
@@ -30,7 +31,7 @@ private slots:
 
 private:
     Ui::ManagerClass ui;
-    QSqlDatabase db;
-    QSqlQuery query;
+    SQLOperat sql;
+
 
 };
