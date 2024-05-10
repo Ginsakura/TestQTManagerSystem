@@ -47,12 +47,12 @@ SQLOperat::SQLOperat() {
 		"UserName text primary key,"
 		"Password not null,"
 		"Permission bool default false);");
-	bool create = cursor.execBatch();
+    bool create = cursor.exec();
 	if (create) {
 		qout << QFgColor(0, 0xff, 0) << "创建成功" << QResetColor();
 	}
 	else {
-		qout << QFgColor(0xff, 0, 0) << "创建失败" << QResetColor() << cursor.lastError().text();
+        qout << QFgColor(0xff, 0, 0) << "创建失败：" << QResetColor() << cursor.lastError();
 	}
 }
 QSqlQuery SQLOperat::SelectAll(const QString table) {
