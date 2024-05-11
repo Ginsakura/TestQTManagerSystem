@@ -8,6 +8,7 @@
 #include <QSqlError>
 #include <QMessageBox>
 #include <qtabwidget.h>
+#include <QDateTime>
 #include "sql.h"
 
 class Manager : public QMainWindow
