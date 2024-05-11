@@ -9,8 +9,9 @@
 #include <QMessageBox>
 #include <qtabwidget.h>
 #include <QDateTime>
+#include <QCheckBox>
+#include <QComboBox>
 #include "sql.h"
-#include <QDateTime>
 class Manager : public QMainWindow
 {
     Q_OBJECT

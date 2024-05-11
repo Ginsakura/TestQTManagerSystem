@@ -7,10 +7,10 @@ SQLOperat::SQLOperat(QSqlDatabase db) {
 
 SQLOperat::SQLOperat() {
 	DB = QSqlDatabase::addDatabase("QSQLITE");
-	DB.setHostName("127.0.0.1");
+	//DB.setHostName("127.0.0.1");
 	DB.setDatabaseName("Manager.db");
-	DB.setUserName("admin");
-	DB.setPassword("123456");
+	//DB.setUserName("admin");
+	//DB.setPassword("123456");
 	if (!DB.open()) {
 		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("打开失败") << QResetColor();
 	}
@@ -179,5 +179,6 @@ QSqlQuery SQLOperat::Select(const QString table, const QString getter = "*") {
 }
 
 SQLOperat::~SQLOperat() {
+	DB.close();
 }
 
