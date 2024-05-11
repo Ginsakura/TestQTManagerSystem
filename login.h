@@ -1,10 +1,11 @@
-#pragma once
+﻿#pragma once
 
 #include <QWidget>
 #include <Manager.h>
 #include <QSqlQuery>
 #include <QSqlDatabase>
 #include <QMessageBox>
+
 namespace Ui {
 class LOGIN;
 }
