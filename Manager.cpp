@@ -13,12 +13,11 @@ Manager::Manager(QWidget *parent)
     ui.stackedWidget->setCurrentWidget(ui.page_2);
 
     ui.name->setPlaceholderText(QString::fromLocal8Bit("姓名"));
-    ui.gender->setPlaceholderText(QString::fromLocal8Bit("性别"));
+
     ui.phone->setPlaceholderText(QString::fromLocal8Bit("手机号"));
     ui.personID->setPlaceholderText(QString::fromLocal8Bit("身份证号"));
     ui.roomnumber->setPlaceholderText(QString::fromLocal8Bit("房间号"));
-    ui.vip->setPlaceholderText(QString::fromLocal8Bit("VIP"));
-    ui.datetime->setPlaceholderText(QString::fromLocal8Bit("入住时间"));
+
 
     //今日房源信息输出
 //    QSqlQuery query = sql.SelectAll("RoomStatu");
@@ -103,7 +102,7 @@ void Manager::on_dengji_clicked()
     roomer.name = ui.name->text();
     roomer.personID = ui.personID->text();
     roomer.phone = ui.phone->text();
-    roomer.gender = ui.gender->text() == "1" ? 1 : 0;
+//    roomer.gender = ui.gender->text() == "1" ? 1 : 0;
     roomer.roomNumber = ui.roomnumber->text().toInt();
     roomer.useVIP = ui.vip->text() == "1" ? 1 : 0;
     roomer.state = 0;

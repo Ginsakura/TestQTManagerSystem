@@ -42,16 +42,6 @@
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
-     <widget class="QLineEdit" name="datetime">
-      <property name="geometry">
-       <rect>
-        <x>270</x>
-        <y>280</y>
-        <width>171</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="name">
       <property name="geometry">
        <rect>
@@ -82,32 +72,12 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLineEdit" name="gender">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>160</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QLineEdit" name="roomnumber">
       <property name="geometry">
        <rect>
         <x>270</x>
         <y>250</y>
         <width>231</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="vip">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>280</y>
-        <width>51</width>
         <height>21</height>
        </rect>
       </property>
@@ -129,13 +99,56 @@
       <property name="geometry">
        <rect>
         <x>340</x>
-        <y>320</y>
+        <y>350</y>
         <width>93</width>
         <height>28</height>
        </rect>
       </property>
       <property name="text">
        <string>登记</string>
+      </property>
+     </widget>
+     <widget class="QDateTimeEdit" name="datetime">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>280</y>
+        <width>231</width>
+        <height>22</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="gender">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>160</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>男</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>女</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QCheckBox" name="vip">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>320</y>
+        <width>71</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>VIP</string>
       </property>
      </widget>
     </widget>
