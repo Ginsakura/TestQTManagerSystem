@@ -29,7 +29,7 @@ void Manager::on_tuifangPageBtn_clicked() {
 void Manager::on_eventPageBtn_clicked() {
 	ui.stackedWidget->setCurrentIndex(3);
 }
-
+//提交入住登记数据
 void Manager::on_dengjiBtn_clicked() {
 	Roomer roomer;
 	roomer.recordTime = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
@@ -42,16 +42,17 @@ void Manager::on_dengjiBtn_clicked() {
 	roomer.state = QString::fromLocal8Bit("登记入住");
 	roomer.save();
 
-	RoomStatu rooms;
-	rooms.roomNumber = ui.roomnumber->text().toInt();
-	rooms.checkIn = true;
+	QString roomn = QString("RoomNumber=%0").arg(ui.roomnumberYu->text().toInt());
+	sql.Update("RoomStatu", "Reservation", "false", roomn);
 	QDateTime curr = QDateTime::currentDateTime();
-	rooms.checkInDate = curr.toString("yyyy-MM-dd hh:mm:ss");
-	rooms.checkEndTime = curr.addDays(1).toString("yyyy-MM-dd hh:mm:ss");
-	rooms.peopleNumber = 1;
-	rooms.save();
+	sql.Update("RoomStatu", "ReservationDate", "", roomn);
+	sql.Update("RoomStatu", "CheckIn", "true", roomn);
+	sql.Update("RoomStatu", "CheckInDate", curr.toString("yyyy-MM-dd hh:mm:ss"), roomn);
+	sql.Update("RoomStatu", "CheckEndDate", curr.addDays(ui.dateLenth->value()).toString("yyyy-MM-dd hh:mm:ss"), roomn);
+	sql.Update("RoomStatu", "PeopleNumber", "1", roomn);
 	UpdateRoomStatus();
 }
+//提交预约数据
 void Manager::on_yuyueBtn_clicked() {
 	Roomer roomer;
 	roomer.recordTime = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
@@ -64,12 +65,13 @@ void Manager::on_yuyueBtn_clicked() {
 	roomer.state = QString::fromLocal8Bit("预约");
 	roomer.save();
 
-	RoomStatu rooms;
-	rooms.roomNumber = ui.roomnumberYu->text().toInt();
-	rooms.reservation = true;
-	rooms.reservationDate = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
-	rooms.peopleNumber = 1;
-	rooms.save();
+	QString roomn = QString("RoomNumber=%0").arg(ui.roomnumberYu->text().toInt());
+	sql.Update("RoomStatu", "Reservation", "true", roomn);
+	sql.Update("RoomStatu", "ReservationDate", QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"), roomn);
+	sql.Update("RoomStatu", "CheckIn", "false", roomn);
+	sql.Update("RoomStatu", "CheckInDate", "", roomn);
+	sql.Update("RoomStatu", "CheckEndDate", "", roomn);
+	sql.Update("RoomStatu", "PeopleNumber", "0", roomn);
 	UpdateRoomStatus();
 }
 

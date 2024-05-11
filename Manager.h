@@ -11,6 +11,7 @@
 #include <QDateTime>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QSpinBox>
 #include "sql.h"
 class Manager : public QMainWindow
 {
