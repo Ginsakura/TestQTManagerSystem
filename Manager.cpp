@@ -1,5 +1,6 @@
 ﻿#include "Manager.h"
 
+
 Manager::Manager(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -43,7 +44,7 @@ Manager::Manager(QWidget *parent)
         QString ReservationDate=q.value(2).toString();
         QString CheckIn=q.value(3).toString();
         QString CheckInDate=q.value(4).toString();
-        QString CheckInTime=q.value(5).toString();
+        QString CheckEndDate=q.value(5).toString();
         QString PeopleNumber=q.value(6).toString();
         QString Remark =q.value(7).toString();
         ui.tableWidget->insertRow(i);
@@ -52,7 +53,7 @@ Manager::Manager(QWidget *parent)
         ui.tableWidget->setItem(i,2,new QTableWidgetItem(ReservationDate));
         ui.tableWidget->setItem(i,3,new QTableWidgetItem(CheckIn));
         ui.tableWidget->setItem(i,4,new QTableWidgetItem(CheckInDate));
-        ui.tableWidget->setItem(i,5,new QTableWidgetItem(CheckInDate));
+        ui.tableWidget->setItem(i,5,new QTableWidgetItem(CheckEndDate));
         ui.tableWidget->setItem(i,6,new QTableWidgetItem(PeopleNumber));
         ui.tableWidget->setItem(i,7,new QTableWidgetItem(Remark));
         i++;
@@ -92,7 +93,11 @@ void Manager::on_room_infor_clicked()
 
 void Manager::on_dengji_clicked()
 {
-    QString value = QString("\"%1\",\"%2\",\"%3\",\"%4\",%5,\"%6\",%7,%8").arg("2024-05-10 18:09:00").arg(ui.name->text())
+    //获取当前时间
+    QDateTime currentDateTime = QDateTime::currentDateTime();
+    QString currentTimeString = currentDateTime.toString("yyyy-MM-dd HH:mm:ss");
+    //登记
+    QString value = QString("\"%1\",\"%2\",\"%3\",\"%4\",%5,\"%6\",%7,%8").arg(currentTimeString).arg(ui.name->text())
         .arg(ui.personID->text()).arg(ui.phone->text()).arg("true")
         .arg(ui.roomnumber->text()).arg("false").arg("0");
     sql.Insert("Roomer", "RecordTime,Name,PersonID,Phone,Gender,RoomNumber,UseVIP,State", value);
