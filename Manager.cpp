@@ -12,13 +12,13 @@ Manager::Manager(QWidget *parent)
     //设置stackedwidget初始页面
     ui.stackedWidget->setCurrentWidget(ui.page_2);
 
-    ui.name->setPlaceholderText("姓名");
-    ui.gender->setPlaceholderText("性别");
-    ui.phone->setPlaceholderText("手机号");
-    ui.personID->setPlaceholderText("身份证号");
-    ui.roomnumber->setPlaceholderText("房间号");
-    ui.vip->setPlaceholderText("VIP");
-    ui.datetime->setPlaceholderText("入住时间");
+    ui.name->setPlaceholderText(QString::fromLocal8Bit("姓名"));
+    ui.gender->setPlaceholderText(QString::fromLocal8Bit("性别"));
+    ui.phone->setPlaceholderText(QString::fromLocal8Bit("手机号"));
+    ui.personID->setPlaceholderText(QString::fromLocal8Bit("身份证号"));
+    ui.roomnumber->setPlaceholderText(QString::fromLocal8Bit("房间号"));
+    ui.vip->setPlaceholderText(QString::fromLocal8Bit("VIP"));
+    ui.datetime->setPlaceholderText(QString::fromLocal8Bit("入住时间"));
 
     //今日房源信息输出
 //    QSqlQuery query = sql.SelectAll("RoomStatu");
@@ -93,12 +93,24 @@ void Manager::on_room_infor_clicked()
 
 void Manager::on_dengji_clicked()
 {
-    //获取当前时间
-    QDateTime currentDateTime = QDateTime::currentDateTime();
-    QString currentTimeString = currentDateTime.toString("yyyy-MM-dd HH:mm:ss");
-    //登记
-    QString value = QString("\"%1\",\"%2\",\"%3\",\"%4\",%5,\"%6\",%7,%8").arg(currentTimeString).arg(ui.name->text())
-        .arg(ui.personID->text()).arg(ui.phone->text()).arg("true")
-        .arg(ui.roomnumber->text()).arg("false").arg("0");
-    sql.Insert("Roomer", "RecordTime,Name,PersonID,Phone,Gender,RoomNumber,UseVIP,State", value);
+    Roomer roomer;
+    if (ui.datetime->text() == "") {
+        roomer.recordTime = QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss");
+    }
+    else {
+        roomer.recordTime = ui.datetime->text();
+    }
+    roomer.name = ui.name->text();
+    roomer.personID = ui.personID->text();
+    roomer.phone = ui.phone->text();
+    roomer.gender = ui.gender->text() == "1" ? 1 : 0;
+    roomer.roomNumber = ui.roomnumber->text().toInt();
+    roomer.useVIP = ui.vip->text() == "1" ? 1 : 0;
+    roomer.state = 0;
+    roomer.save();
+    //QString value = QString("\"%1\",\"%2\",\"%3\",\"%4\",%5,\"%6\",%7,%8")
+    //    .arg("2024-05-10 18:09:00").arg()
+    //    .arg().arg().arg("true")
+    //    .arg().arg("false").arg("0");
+    //sql.Insert("Roomer", "RecordTime,Name,PersonID,Phone,Gender,RoomNumber,UseVIP,State", value);
 }
