@@ -26,7 +26,7 @@
 | RecordTime      | datetime |       | primary key |
 | RoomNumber      | int      |       | NotNull     |
 | Event           | text     |       | NotNull     |
-| State           | int      |       | 0=compelete |
+| State           | text     |       |             |
 ### Room
 | Column          | Type     | lenth | Remark      |
 |-----------------|----------|-------|-------------|
@@ -43,7 +43,7 @@
 | Gender          | bool     |       | T=♂ NotNull|
 | RoomNumber      | int      |       | NotNull     |
 | UseVIP          | bool     |       | defalut:F   |
-| State           | int      |       | 0=exit,1=reser,2=checkin...|
+| State           | text     |       |             |
 
 ## version
 ### 0.0.3 sql

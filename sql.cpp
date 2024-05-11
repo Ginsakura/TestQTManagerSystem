@@ -50,7 +50,7 @@ SQLOperat::SQLOperat() {
 			"RecordTime datetime primary key,"
 			"RoomNumber int not null,"
 			"Event text not null,"
-			"state int );");
+			"state text );");
 		create = cursor.exec();
 		if (create) {
 			qout << QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("Event表创建成功或已存在") << QResetColor();
@@ -81,7 +81,7 @@ SQLOperat::SQLOperat() {
 			"Gender bool not null,"
 			"RoomNumber int not null,"
 			"UseVIP bool,"
-			"State int);");
+			"State text);");
 		create = cursor.exec();
 		if (create) {
 			qout << QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("Roomer表创建成功或已存在") << QResetColor();
