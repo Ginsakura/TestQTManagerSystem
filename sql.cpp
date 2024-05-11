@@ -18,7 +18,7 @@ SQLOperat::SQLOperat() {
 	cursor = QSqlQuery(DB);
 	bool create = false;
 	tempCur = Select("sqlite_master", "name", "type='table'");
-	bool table[5] = { true };
+    bool table[5] = { true,true,true,true,true };
 	while (tempCur.next()) {
 		QString tab = tempCur.value(0).toString();
 		if (tab == "RoomStatu") table[0] = false;

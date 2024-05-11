@@ -7,7 +7,7 @@ LOGIN::LOGIN(QWidget *parent) :
     ui(new Ui::LOGIN)
 {
     ui->setupUi(this);
-    this->page2 = new Manager;
+    this->page2 = new Manager;//实例化manager主页界面
 
 }
 
