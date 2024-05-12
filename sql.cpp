@@ -44,6 +44,20 @@ SQLOperat::SQLOperat() {
 		else {
 			qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("RoomStatu表创建失败: ") << QResetColor() << cursor.lastError();
 		}
+		for (int i = 1; i < 3; i++) {
+			for (int j = 1; j < 5; j++) {
+				bool result = Insert("RoomStatu", "RoomNumber,Reservation,CheckIn,PeopleNumber", QString("%0,0,0,0").arg(i * 100 + j));
+				if (result) {
+					qout << QString::fromLocal8Bit("初始房间状态信息填充...") <<
+						QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("成功") << QResetColor();
+				}
+				else {
+					qout << QString::fromLocal8Bit("初始房间状态信息填充...") <<
+						QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("失败\n") << QResetColor() <<
+						cursor.lastError();
+				}
+			}
+		}
 	}
 	if (table[1]) {
 		cursor.prepare("create table if not exists Event ("
@@ -70,6 +84,20 @@ SQLOperat::SQLOperat() {
 		}
 		else {
 			qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("Room表创建失败: ") << QResetColor() << cursor.lastError();
+		}
+		for (int i = 1; i < 3; i++) {
+			for (int j = 1; j < 5; j++) {
+				bool result = Insert("Room", "RoomNumber,Price,VIP", QString("%0,199,80").arg(i * 100 + j));
+				if (result) {
+					qout << QString::fromLocal8Bit("初始房间价格信息填充...") <<
+						QFgColor(0, 0xff, 0) << QString::fromLocal8Bit("成功") << QResetColor();
+				}
+				else {
+					qout << QString::fromLocal8Bit("初始房间价格信息填充...") <<
+						QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("失败\n") << QResetColor() <<
+						cursor.lastError();
+				}
+			}
 		}
 	}
 	if (table[3]) {
