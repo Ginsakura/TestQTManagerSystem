@@ -11,6 +11,7 @@
 #include <QDateTime>
 #include <QCheckBox>
 #include <QComboBox>
+#include <QSpinBox>
 #include "sql.h"
 class Manager : public QMainWindow
 {
@@ -23,21 +24,22 @@ public:
 private slots:
     //void on_pushButton_5_clicked();
 
-    void on_appoin_button_clicked();
+    void on_yuyuePageBtn_clicked();
 
-    void on_register_button_clicked();
+    void on_dengjiPageBtn_clicked();
 
-    void on_check_out_clicked();
+    void on_tuifangPageBtn_clicked();
 
-    void on_event_clicked();
+    void on_eventPageBtn_clicked();
 
-    void on_room_infor_clicked();
+    void on_dengjiBtn_clicked();
 
-    void on_dengji_clicked();
+    void on_yuyueBtn_clicked();
 
 private:
     Ui::ManagerClass ui;
     SQLOperat sql;
     QSqlQuery query;
+    void UpdateRoomStatus();
 
 };
