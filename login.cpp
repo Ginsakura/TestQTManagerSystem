@@ -23,7 +23,7 @@ void LOGIN::on_login_clicked()
     QSqlQuery query = sql.Select("User", "Permission", where);
 
     if (query.next()) {
-        emit login_success();
+
         this->close();
         this->page2->show();
         return;

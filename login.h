@@ -17,8 +17,7 @@ class LOGIN : public QWidget
 public:
     explicit LOGIN(QWidget *parent = nullptr);
     ~LOGIN();
-signals:
-    void login_success();
+
 private slots:
     void on_login_clicked();
 
