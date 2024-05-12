@@ -36,6 +36,8 @@ private slots:
 
     void on_yuyueBtn_clicked();
 
+    void on_incident_view_clicked();
+
 private:
     Ui::ManagerClass ui;
     SQLOperat sql;

@@ -71,7 +71,7 @@ void Manager::on_yuyueBtn_clicked() {
 	sql.Update("RoomStatu", "CheckIn", "false", roomn);
 	sql.Update("RoomStatu", "CheckInDate", "", roomn);
 	sql.Update("RoomStatu", "CheckEndDate", "", roomn);
-	sql.Update("RoomStatu", "PeopleNumber", "0", roomn);
+    sql.Update("RoomStatu", "PeopleNumber", "1", roomn);
 	UpdateRoomStatus();
 }
 
@@ -99,4 +99,8 @@ void Manager::UpdateRoomStatus() {
 		ui.tableWidget->setItem(i, 7, new QTableWidgetItem(Remark));
 		i++;
 	}
+}
+void Manager::on_incident_view_clicked()
+{
+    ui.stackedWidget->setCurrentIndex(4);
 }

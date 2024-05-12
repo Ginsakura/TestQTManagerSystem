@@ -19,12 +19,12 @@
      <rect>
       <x>100</x>
       <y>290</y>
-      <width>831</width>
+      <width>841</width>
       <height>361</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="yuyue">
      <widget class="QLineEdit" name="nameYu">
@@ -413,18 +413,84 @@
      </widget>
     </widget>
     <widget class="QWidget" name="shijian">
-     <widget class="QLabel" name="label_4">
+     <widget class="QPushButton" name="incident_view">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>150</y>
-        <width>54</width>
-        <height>12</height>
+        <x>80</x>
+        <y>130</y>
+        <width>75</width>
+        <height>23</height>
        </rect>
       </property>
       <property name="text">
-       <string>事件</string>
+       <string>查看</string>
       </property>
+     </widget>
+     <widget class="QLineEdit" name="event">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>191</width>
+        <height>51</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>10</y>
+        <width>201</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;事件&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>81</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>        事件：</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>20</y>
+        <width>561</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>录入时间</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>事件</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>房间号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>状态</string>
+       </property>
+      </column>
      </widget>
     </widget>
    </widget>
