@@ -39,6 +39,10 @@ private slots:
 
     void on_incident_view_clicked();
 
+    void on_event_insert_clicked();
+
+    void on_event_update_clicked();
+
 private:
     Ui::ManagerClass ui;
     bool isAdmin;
