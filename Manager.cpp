@@ -100,3 +100,7 @@ void Manager::UpdateRoomStatus() {
 		i++;
 	}
 }
+void Manager::on_incident_view_clicked()
+{
+    ui.stackedWidget->setCurrentIndex(4);
+}
