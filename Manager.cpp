@@ -71,7 +71,7 @@ void Manager::on_yuyueBtn_clicked() {
 	sql.Update("RoomStatu", "CheckIn", "false", roomn);
 	sql.Update("RoomStatu", "CheckInDate", "", roomn);
 	sql.Update("RoomStatu", "CheckEndDate", "", roomn);
-	sql.Update("RoomStatu", "PeopleNumber", "0", roomn);
+    sql.Update("RoomStatu", "PeopleNumber", "1", roomn);
 	UpdateRoomStatus();
 }
 
