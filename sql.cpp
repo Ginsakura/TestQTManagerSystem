@@ -177,7 +177,7 @@ bool SQLOperat::Update(const QString table, const QString keys, const QString va
 	cursor.prepare(QString("Update %1 set '%2'='%3' where %3").arg(table).arg(keys).arg(value).arg(condition));
 	bool state = cursor.exec();
 	if (!state) {
-		qout << QFgColor(0xff, 0, 0) << "Insert to" << table << " error: " << QResetColor() << cursor.lastError();
+		qout << QFgColor(0xff, 0, 0) << "Update to" << table << " error: " << QResetColor() << cursor.lastError();
 	}
 	return state;
 }
