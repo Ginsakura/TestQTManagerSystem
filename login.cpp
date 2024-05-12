@@ -7,7 +7,6 @@ LOGIN::LOGIN(QWidget *parent) :
     ui(new Ui::LOGIN)
 {
     ui->setupUi(this);
-    this->page2 = new Manager;//实例化manager主页界面
 
 }
 
@@ -24,6 +23,7 @@ void LOGIN::on_login_clicked()
 
     if (query.next()) {
         emit login_success();
+        this->page2 = new Manager(query.value(0).toBool());//实例化manager主页界面
         this->close();
         this->page2->show();
         return;

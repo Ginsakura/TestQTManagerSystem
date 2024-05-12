@@ -19,6 +19,7 @@ class Manager : public QMainWindow
 
 public:
     Manager(QWidget *parent = nullptr);
+    Manager(bool,QWidget *parent = nullptr);
     ~Manager();
 
 private slots:
@@ -40,6 +41,7 @@ private slots:
 
 private:
     Ui::ManagerClass ui;
+    bool isAdmin;
     SQLOperat sql;
     QSqlQuery query;
     void UpdateRoomStatus();

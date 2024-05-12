@@ -9,6 +9,16 @@ Manager::Manager(QWidget* parent)
 	//设置stackedwidget初始页面
 	ui.stackedWidget->setCurrentWidget(ui.dengji);
 }
+Manager::Manager(bool admin,QWidget* parent)
+	: QMainWindow(parent)
+{
+	isAdmin = admin;
+	ui.setupUi(this);
+
+	this->setWindowTitle(QString::fromLocal8Bit("酒店前台管理系统"));
+	//设置stackedwidget初始页面
+	ui.stackedWidget->setCurrentWidget(ui.dengji);
+}
 
 Manager::~Manager()
 {}
