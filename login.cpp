@@ -28,7 +28,8 @@ void LOGIN::on_login_clicked()
         return;
     }
     else{
-        QMessageBox::warning(nullptr, QString::fromLocal8Bit("登录失败"), QString::fromLocal8Bit("账户或密码错误"));    }
+        QMessageBox::warning(nullptr, QString::fromLocal8Bit("登录失败"), QString::fromLocal8Bit("账户或密码错误"));
+    }
 }
 
 

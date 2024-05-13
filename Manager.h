@@ -13,6 +13,7 @@
 #include <QComboBox>
 #include <QSpinBox>
 #include "sql.h"
+
 class Manager : public QMainWindow
 {
     Q_OBJECT
@@ -47,5 +48,6 @@ private:
     SQLOperat sql;
     QSqlQuery query;
     void UpdateRoomStatus();
+    QMessageBox Mybox;
 
 };
