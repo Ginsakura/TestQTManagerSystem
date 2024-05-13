@@ -156,27 +156,12 @@ void Manager::on_event_insert_clicked()
     event.event=ui.event_edit->text();
     event.state=ui.event_status->currentText();
     event.save();
-<<<<<<< HEAD
-=======
 
-    /*sql.Insert("Event","RecordTime",event.recordTime);
-    sql.Insert("Event","RoomNumber",event.roomNumber);
-    sql.Insert("Event","Event",event.event);
-    sql.Insert("Event","State",event.state);*/
->>>>>>> 9dcecf3af850afdae7e56e3a5cff249ea17628a5
 }
 //事件状态更新按钮
 void Manager::on_event_update_clicked()
 {
-<<<<<<< HEAD
-=======
-//    Event event;
-//    event.recordTime=ui.event_time->text();
-//    event.roomNumber=ui.room_number_event->text().toInt();
-//    event.event=ui.event_edit->text();
-//    event.state=ui.event_status->currentText();
 
->>>>>>> 9dcecf3af850afdae7e56e3a5cff249ea17628a5
     QString event = QString("RecordTime=\"%0\"").arg(ui.event_time->text());
     sql.Update("Event","State",ui.event_status->currentText(),event);
 }
