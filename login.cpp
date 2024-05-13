@@ -22,7 +22,6 @@ void LOGIN::on_login_clicked()
     QSqlQuery query = sql.Select("User", "Permission", where);
 
     if (query.next()) {
-        emit login_success();
         this->page2 = new Manager(query.value(0).toBool());//实例化manager主页界面
         this->close();
         this->page2->show();

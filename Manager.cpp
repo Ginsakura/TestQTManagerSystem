@@ -4,21 +4,23 @@ Manager::Manager(QWidget* parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-
 	this->setWindowTitle(QString::fromLocal8Bit("酒店前台管理系统"));
 	//设置stackedwidget初始页面
 	ui.stackedWidget->setCurrentWidget(ui.dengji);
     UpdateRoomStatus();
 }
-Manager::Manager(bool admin,QWidget* parent)
+Manager::Manager(bool admin, QWidget* parent)
 	: QMainWindow(parent)
 {
-	isAdmin = admin;
 	ui.setupUi(this);
-
+	if (admin) {
+		ui.isAdmin->setText("Admin");
+		isAdmin = admin;
+	}
 	this->setWindowTitle(QString::fromLocal8Bit("酒店前台管理系统"));
 	//设置stackedwidget初始页面
 	ui.stackedWidget->setCurrentWidget(ui.dengji);
+    UpdateRoomStatus();
 }
 
 Manager::~Manager()
