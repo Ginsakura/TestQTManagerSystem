@@ -41,6 +41,9 @@
     <ResourceCompile Include="Manager.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+    <QtRcc Include="Pictures.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

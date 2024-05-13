@@ -96,6 +96,7 @@
     <None Include=".gitignore" />
     <None Include="readme.md" />
     <QtRcc Include="Manager.qrc" />
+    <QtRcc Include="Pictures.qrc" />
     <QtUic Include="login.ui" />
     <QtUic Include="Manager.ui" />
     <QtMoc Include="Manager.h" />
