@@ -62,6 +62,20 @@ void Manager::on_dengjiBtn_clicked() {
 	sql.Update("RoomStatu", "CheckEndDate", curr.addDays(ui.dateLenth->value()).toString("yyyy-MM-dd hh:mm:ss"), roomn);
 	sql.Update("RoomStatu", "PeopleNumber", "1", roomn);
 	UpdateRoomStatus();
+
+    QMessageBox msgbox;
+    msgbox.setWindowTitle(" ");
+    msgbox.setText("登记成功");
+    msgbox.setIcon(QMessageBox::Information);
+    msgbox.addButton(QMessageBox::Ok);
+    msgbox.exec();
+
+    ui.name->setText("");
+    ui.roomnumber->setText("");
+    ui.personID->setText("");
+    ui.phone->setText("");
+    ui.isVIP->setChecked(false);
+
 }
 //提交预约数据
 void Manager::on_yuyueBtn_clicked() {
@@ -138,6 +152,7 @@ void Manager::on_event_insert_clicked()
     event.event=ui.event_edit->text();
     event.state=ui.event_status->currentText();
     event.save();
+
     /*sql.Insert("Event","RecordTime",event.recordTime);
     sql.Insert("Event","RoomNumber",event.roomNumber);
     sql.Insert("Event","Event",event.event);
@@ -151,6 +166,7 @@ void Manager::on_event_update_clicked()
 //    event.roomNumber=ui.room_number_event->text().toInt();
 //    event.event=ui.event_edit->text();
 //    event.state=ui.event_status->currentText();
+
     QString event = QString("RecordTime=\"%0\"").arg(ui.event_time->text());
     sql.Update("Event","State",ui.event_status->currentText(),event);
 }

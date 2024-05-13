@@ -49,5 +49,6 @@ private:
     SQLOperat sql;
     QSqlQuery query;
     void UpdateRoomStatus();
+    QMessageBox Mybox;
 
 };
