@@ -13,6 +13,7 @@
 #include <QComboBox>
 #include <QSpinBox>
 #include "sql.h"
+
 class Manager : public QMainWindow
 {
     Q_OBJECT

@@ -429,7 +429,6 @@
        <number>1</number>
       </property>
      </widget>
-<<<<<<< HEAD
      <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
@@ -443,8 +442,6 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff1028;&quot;&gt;VIP&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-=======
->>>>>>> dcc903a4c25444337af67cb2c045daef42b16a0c
      <widget class="QLabel" name="label_42">
       <property name="geometry">
        <rect>
@@ -478,10 +475,7 @@
      <zorder>label_19</zorder>
      <zorder>label_20</zorder>
      <zorder>dateLenth</zorder>
-<<<<<<< HEAD
      <zorder>label_15</zorder>
-=======
->>>>>>> dcc903a4c25444337af67cb2c045daef42b16a0c
     </widget>
     <widget class="QWidget" name="tuifang">
      <widget class="QLabel" name="label_3">
@@ -660,7 +654,6 @@
        </rect>
       </property>
      </widget>
-<<<<<<< HEAD
      <widget class="QDateTimeEdit" name="event_time">
       <property name="geometry">
        <rect>
@@ -671,20 +664,12 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_38">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>61</width>
-=======
      <widget class="QLabel" name="label_380">
       <property name="geometry">
        <rect>
         <x>13</x>
         <y>210</y>
         <width>51</width>
->>>>>>> dcc903a4c25444337af67cb2c045daef42b16a0c
         <height>21</height>
        </rect>
       </property>
