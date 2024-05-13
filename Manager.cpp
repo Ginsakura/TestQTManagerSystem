@@ -140,11 +140,12 @@ void Manager::on_incident_view_clicked()
         QString State=event_query.value(3).toString();
         ui.event_view->insertRow(i);
         ui.event_view->setItem(i,0,new QTableWidgetItem(RecordTime));
-        ui.event_view->setItem(i,1,new QTableWidgetItem(RoomNumber));
-        ui.event_view->setItem(i,2,new QTableWidgetItem(Event));
+        ui.event_view->setItem(i,1,new QTableWidgetItem(Event));
+        ui.event_view->setItem(i,2,new QTableWidgetItem(RoomNumber));
         ui.event_view->setItem(i,3,new QTableWidgetItem(State));
         i++;
     }
+
 }
 //事件插入按钮
 void Manager::on_event_insert_clicked()
@@ -156,19 +157,10 @@ void Manager::on_event_insert_clicked()
     event.state=ui.event_status->currentText();
     event.save();
 
-    /*sql.Insert("Event","RecordTime",event.recordTime);
-    sql.Insert("Event","RoomNumber",event.roomNumber);
-    sql.Insert("Event","Event",event.event);
-    sql.Insert("Event","State",event.state);*/
 }
 //事件状态更新按钮
 void Manager::on_event_update_clicked()
 {
-//    Event event;
-//    event.recordTime=ui.event_time->text();
-//    event.roomNumber=ui.room_number_event->text().toInt();
-//    event.event=ui.event_edit->text();
-//    event.state=ui.event_status->currentText();
 
     QString event = QString("RecordTime=\"%0\"").arg(ui.event_time->text());
     sql.Update("Event","State",ui.event_status->currentText(),event);
