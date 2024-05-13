@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="yuyue">
      <widget class="QLineEdit" name="nameYu">
@@ -429,19 +429,6 @@
        <number>1</number>
       </property>
      </widget>
-     <widget class="QLabel" name="label_15">
-      <property name="geometry">
-       <rect>
-        <x>410</x>
-        <y>100</y>
-        <width>72</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff1028;&quot;&gt;VIP&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_42">
       <property name="geometry">
        <rect>
@@ -475,7 +462,6 @@
      <zorder>label_19</zorder>
      <zorder>label_20</zorder>
      <zorder>dateLenth</zorder>
-     <zorder>label_15</zorder>
     </widget>
     <widget class="QWidget" name="tuifang">
      <widget class="QLabel" name="label_3">
@@ -489,6 +475,42 @@
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;退房&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>70</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>房间号：</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="roomNumberTui">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>70</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="tuifangBtn">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>150</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>退房</string>
       </property>
      </widget>
     </widget>
@@ -693,6 +715,7 @@
        <string/>
       </property>
      </widget>
+     <zorder>label_380</zorder>
      <zorder>label_43</zorder>
      <zorder>incident_view</zorder>
      <zorder>event_edit</zorder>
@@ -706,7 +729,6 @@
      <zorder>label_37</zorder>
      <zorder>room_number_event</zorder>
      <zorder>event_time</zorder>
-     <zorder>label_38</zorder>
     </widget>
    </widget>
    <widget class="QWidget" name="layoutWidget">
