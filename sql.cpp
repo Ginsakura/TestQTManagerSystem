@@ -208,6 +208,5 @@ QSqlQuery SQLOperat::Select(const QString table, const QString getter = "*") {
 }
 
 SQLOperat::~SQLOperat() {
-	DB.close();
 }
 

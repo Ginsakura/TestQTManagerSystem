@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="yuyue">
      <widget class="QLineEdit" name="nameYu">
@@ -993,24 +993,11 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff1028;&quot;&gt;VIP&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_14">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>150</y>
-        <width>72</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_42">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>4</y>
+        <y>10</y>
         <width>841</width>
         <height>361</height>
        </rect>
@@ -1040,7 +1027,6 @@
      <zorder>label_20</zorder>
      <zorder>dateLenth</zorder>
      <zorder>label_15</zorder>
-     <zorder>label_14</zorder>
     </widget>
     <widget class="QWidget" name="tuifang">
      <widget class="QLabel" name="label_3">
@@ -1081,19 +1067,6 @@
        </rect>
       </property>
      </widget>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>10</y>
-        <width>201</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;事件&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
@@ -1110,7 +1083,7 @@
      <widget class="QTableWidget" name="event_view">
       <property name="geometry">
        <rect>
-        <x>280</x>
+        <x>270</x>
         <y>20</y>
         <width>561</width>
         <height>341</height>
@@ -1120,20 +1093,56 @@
        <property name="text">
         <string>录入时间</string>
        </property>
+       <property name="foreground">
+        <brush brushstyle="SolidPattern">
+         <color alpha="248">
+          <red>153</red>
+          <green>102</green>
+          <blue>255</blue>
+         </color>
+        </brush>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>事件</string>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>123</green>
+          <blue>76</blue>
+         </color>
+        </brush>
        </property>
       </column>
       <column>
        <property name="text">
         <string>房间号</string>
        </property>
+       <property name="foreground">
+        <brush brushstyle="SolidPattern">
+         <color alpha="255">
+          <red>0</red>
+          <green>241</green>
+          <blue>132</blue>
+         </color>
+        </brush>
+       </property>
       </column>
       <column>
        <property name="text">
         <string>状态</string>
+       </property>
+       <property name="foreground">
+        <brush brushstyle="SolidPattern">
+         <color alpha="54">
+          <red>141</red>
+          <green>56</green>
+          <blue>78</blue>
+         </color>
+        </brush>
        </property>
       </column>
      </widget>
