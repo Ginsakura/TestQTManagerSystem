@@ -103,6 +103,7 @@ void Manager::on_yuyueBtn_clicked() {
 }
 //今日房源视图
 void Manager::UpdateRoomStatus() {
+	ui.tableWidget->reset();
 	QSqlQuery q = sql.SelectAll("RoomStatu");
 	int i = 0;
 	while (q.next()) {
