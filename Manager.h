@@ -43,6 +43,8 @@ private slots:
 
     void on_event_update_clicked();
 
+    void on_tuifangBtn_clicked();
+
 private:
     Ui::ManagerClass ui;
     SQLOperat sql;

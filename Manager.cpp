@@ -165,3 +165,42 @@ void Manager::on_event_update_clicked()
     QString event = QString("RecordTime=\"%0\"").arg(ui.event_time->text());
     sql.Update("Event","State",ui.event_status->currentText(),event);
 }
+
+//退房
+void Manager::on_tuifangBtn_clicked() {
+	int roomN = ui.roomNumberTui->text().toInt();
+
+	Roomer roomer;
+	QMessageBox msg;
+	QSqlQuery q = sql.Select("Roomer", "*", QString("RoomNumber=%0 order by RecordTime DESC").arg(roomN));
+	if (q.next()) {
+		roomer.recordTime = q.value(0).toString();
+		roomer.name = q.value(1).toString();
+		roomer.personID = q.value(2).toString();
+		roomer.phone = q.value(3).toString();
+		roomer.gender = q.value(4).toBool();
+		roomer.roomNumber = q.value(5).toInt();
+		roomer.useVIP = q.value(6).toBool();
+		roomer.state = q.value(7).toString();
+		if (roomer.state == "入住") {
+			QString roomn = QString("RoomNumber=%1").arg(ui.roomnumberYu->text().toInt());
+			sql.Update("RoomStatu", "Reservation", "true", roomn);
+			sql.Update("RoomStatu", "ReservationDate", QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"), roomn);
+			sql.Update("RoomStatu", "CheckIn", "false", roomn);
+			sql.Update("RoomStatu", "CheckInDate", "", roomn);
+			sql.Update("RoomStatu", "CheckEndDate", "", roomn);
+			sql.Update("RoomStatu", "PeopleNumber", "1", roomn);
+			UpdateRoomStatus();
+		}
+		else {
+			qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("当前房间无人入住") << QResetColor();
+			msg.setText("当前房间无人入住");
+			msg.exec();
+		}
+	}
+	else {
+		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("当前房间无记录") << QResetColor();
+		msg.setText("当前房间无记录");
+		msg.exec();
+	}
+}
