@@ -22,7 +22,7 @@ private slots:
     void on_login_clicked();
 
 private:
-    Ui::LOGIN *ui;
+    Ui::LOGIN* ui;
     SQLOperat sql;
-    Manager *page2 = NULL;
+    Manager* page2 = nullptr;
 };

@@ -19,12 +19,11 @@ class Manager : public QMainWindow
 
 public:
     Manager(QWidget *parent = nullptr);
-    Manager(bool,QWidget *parent = nullptr);
+    Manager(bool, QWidget* parent = nullptr);
     ~Manager();
+    bool isAdmin = false;
 
 private slots:
-    //void on_pushButton_5_clicked();
-
     void on_yuyuePageBtn_clicked();
 
     void on_dengjiPageBtn_clicked();
@@ -45,7 +44,6 @@ private slots:
 
 private:
     Ui::ManagerClass ui;
-    bool isAdmin;
     SQLOperat sql;
     QSqlQuery query;
     void UpdateRoomStatus();

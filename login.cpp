@@ -22,7 +22,10 @@ void LOGIN::on_login_clicked()
     QSqlQuery query = sql.Select("User", "Permission", where);
 
     if (query.next()) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dcc903a4c25444337af67cb2c045daef42b16a0c
         this->page2 = new Manager(query.value(0).toBool());//实例化manager主页界面
         this->close();
         this->page2->show();
