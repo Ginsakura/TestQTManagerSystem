@@ -4,7 +4,19 @@ Manager::Manager(QWidget* parent)
 	: QMainWindow(parent)
 {
 	ui.setupUi(this);
-
+	this->setWindowTitle(QString::fromLocal8Bit("酒店前台管理系统"));
+	//设置stackedwidget初始页面
+	ui.stackedWidget->setCurrentWidget(ui.dengji);
+    UpdateRoomStatus();
+}
+Manager::Manager(bool admin, QWidget* parent)
+	: QMainWindow(parent)
+{
+	ui.setupUi(this);
+	if (admin) {
+		ui.isAdmin->setText("Admin");
+		isAdmin = admin;
+	}
 	this->setWindowTitle(QString::fromLocal8Bit("酒店前台管理系统"));
 	//设置stackedwidget初始页面
 	ui.stackedWidget->setCurrentWidget(ui.dengji);
@@ -52,6 +64,20 @@ void Manager::on_dengjiBtn_clicked() {
 	sql.Update("RoomStatu", "CheckEndDate", curr.addDays(ui.dateLenth->value()).toString("yyyy-MM-dd hh:mm:ss"), roomn);
 	sql.Update("RoomStatu", "PeopleNumber", "1", roomn);
 	UpdateRoomStatus();
+
+    QMessageBox msgbox;
+    msgbox.setWindowTitle(" ");
+    msgbox.setText("登记成功");
+    msgbox.setIcon(QMessageBox::Information);
+    msgbox.addButton(QMessageBox::Ok);
+    msgbox.exec();
+
+    ui.name->setText("");
+    ui.roomnumber->setText("");
+    ui.personID->setText("");
+    ui.phone->setText("");
+    ui.isVIP->setChecked(false);
+
 }
 //提交预约数据
 void Manager::on_yuyueBtn_clicked() {
@@ -129,10 +155,27 @@ void Manager::on_event_insert_clicked()
     event.event=ui.event_edit->text();
     event.state=ui.event_status->currentText();
     event.save();
+<<<<<<< HEAD
+=======
+
+    /*sql.Insert("Event","RecordTime",event.recordTime);
+    sql.Insert("Event","RoomNumber",event.roomNumber);
+    sql.Insert("Event","Event",event.event);
+    sql.Insert("Event","State",event.state);*/
+>>>>>>> 9dcecf3af850afdae7e56e3a5cff249ea17628a5
 }
 //事件状态更新按钮
 void Manager::on_event_update_clicked()
 {
+<<<<<<< HEAD
+=======
+//    Event event;
+//    event.recordTime=ui.event_time->text();
+//    event.roomNumber=ui.room_number_event->text().toInt();
+//    event.event=ui.event_edit->text();
+//    event.state=ui.event_status->currentText();
+
+>>>>>>> 9dcecf3af850afdae7e56e3a5cff249ea17628a5
     QString event = QString("RecordTime=\"%0\"").arg(ui.event_time->text());
     sql.Update("Event","State",ui.event_status->currentText(),event);
 }

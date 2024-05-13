@@ -208,5 +208,9 @@ QSqlQuery SQLOperat::Select(const QString table, const QString getter = "*") {
 }
 
 SQLOperat::~SQLOperat() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9dcecf3af850afdae7e56e3a5cff249ea17628a5
 }
 
