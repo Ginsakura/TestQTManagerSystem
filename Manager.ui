@@ -1286,8 +1286,6 @@
        <string/>
       </property>
      </widget>
-<<<<<<< HEAD
-=======
      <zorder>label_380</zorder>
      <zorder>label_43</zorder>
      <zorder>incident_view</zorder>
@@ -1302,7 +1300,6 @@
      <zorder>label_37</zorder>
      <zorder>room_number_event</zorder>
      <zorder>event_time</zorder>
->>>>>>> 72ccb5e3a928cb196e82de637dd1575faa2faa29
     </widget>
    </widget>
    <widget class="QWidget" name="layoutWidget">
