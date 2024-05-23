@@ -6,11 +6,18 @@ SQLOperat::SQLOperat(QSqlDatabase db) {
 }
 
 SQLOperat::SQLOperat() {
-	DB = QSqlDatabase::addDatabase("QSQLITE");
-	//DB.setHostName("127.0.0.1");
-	DB.setDatabaseName("Manager.db");
-	//DB.setUserName("admin");
-	//DB.setPassword("123456");
+	// 检查数据库连接是否已经创建过
+	if (QSqlDatabase::contains("SQLiteLink"))
+	{
+		DB = QSqlDatabase::database("SQLiteLink");
+	}
+	// 创建数据库连接
+	else {
+		// 加载驱动
+		DB = QSqlDatabase::addDatabase("QSQLITE", "SQLiteLink");
+		// 连接数据库
+		DB.setDatabaseName("Manager.db");
+	}
 	if (!DB.open()) {
 		qout << QFgColor(0xff, 0, 0) << QString::fromLocal8Bit("打开失败") << QResetColor();
 	}
