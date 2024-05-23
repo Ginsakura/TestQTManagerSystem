@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="yuyue">
      <widget class="QLineEdit" name="nameYu">
@@ -510,16 +510,6 @@
        <string>退房</string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="tuifang_money">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>120</y>
-        <width>171</width>
-        <height>61</height>
-       </rect>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="shijian">
      <widget class="QPushButton" name="incident_view">
@@ -849,9 +839,6 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="Manager.qrc"/>
-  <include location="Pictures.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

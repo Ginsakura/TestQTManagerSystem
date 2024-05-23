@@ -182,14 +182,14 @@ void Manager::on_tuifangBtn_clicked() {
 		roomer.roomNumber = q.value(5).toInt();
 		roomer.useVIP = q.value(6).toBool();
 		roomer.state = q.value(7).toString();
-		if (roomer.state == "入住") {
-			QString roomn = QString("RoomNumber=%1").arg(ui.roomnumberYu->text().toInt());
-			sql.Update("RoomStatu", "Reservation", "true", roomn);
-			sql.Update("RoomStatu", "ReservationDate", QDateTime::currentDateTime().toString("yyyy-MM-dd hh:mm:ss"), roomn);
-			sql.Update("RoomStatu", "CheckIn", "false", roomn);
+        if (roomer.state == "登记入住"||roomer.state=="预约") {
+            QString roomn = QString("RoomNumber=%1").arg(ui.roomNumberTui->text().toInt());
+            sql.Update("RoomStatu", "Reservation", "0", roomn);
+            sql.Update("RoomStatu", "ReservationDate","", roomn);
+            sql.Update("RoomStatu", "CheckIn", "0", roomn);
 			sql.Update("RoomStatu", "CheckInDate", "", roomn);
 			sql.Update("RoomStatu", "CheckEndDate", "", roomn);
-			sql.Update("RoomStatu", "PeopleNumber", "1", roomn);
+            sql.Update("RoomStatu", "PeopleNumber", "0", roomn);
 			UpdateRoomStatus();
 		}
 		else {
